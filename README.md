@@ -5,4 +5,6 @@ A Python script to reserve and stress system memory resources from Linux machine
 # CGROUPS Python library
 https://github.com/francisbouvier/cgroups
 
+https://github.com/peo3/cgroup-utils
+
 

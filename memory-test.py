@@ -13,11 +13,13 @@ from cgroups import Cgroup
 from memory_profiler import profile
 from psutil._common import bytes2human
 
+MEGABYTE = 1024 * 1024
+
 def calculate_memory(reserve_pct, consume_pct):
     # From % to MB
-    total_memory = psutil.virtual_memory().total / 1024 / 1024
+    total_memory = psutil.virtual_memory().total / MEGABYTE
     reserve_qty = (total_memory * reserve_pct) / 100
-    consume_qty = (reserve_qty * consume_pct) / 10
+    consume_qty = (reserve_qty * consume_pct) / 100
     return reserve_qty, consume_qty
 
 def reserve_system_memory(memory_qty):
@@ -30,12 +32,12 @@ def reserve_system_memory(memory_qty):
 def fill_memory(memory_qty):
     # consume: MB of reserved memory
     dummy_buffer = []
-    dummy_buffer = ['A' * 1024 * 1024 for _ in range(0, memory_qty)]
+    dummy_buffer = ['A' * MEGABYTE for _ in range(0, int(memory_qty))]
     return dummy_buffer
 
 def mem_info():
-    nt = psutil.virtual_memory()
     # Pretty print the tuple returned in psutil.virtual_memory()
+    nt = psutil.virtual_memory()
     for name in nt._fields:
         value = getattr(nt, name)
         if name != 'percent':
@@ -50,26 +52,24 @@ def mem_check():
 def main():
     # Parsing arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument("-m", required=True, help="Percentage of system memory reserved used by the script")
-
-    # TODO: Arguments should be validated
-    args = vars(ap.parse_args())
+    ap.add_argument("-m", required=True, type=int, help="Percentage of system memory reserved used by the script")
+    args = ap.parse_args()
+    consume_pct = args.m
     reserve_pct = 80 
-    consume_pct = int(args['m'])
-
-    # Calculate the amount of RAM in MB to reserve and allocate
-    reserve, consume = calculate_memory(reserve_pct, consume_pct)
-
-    # Reserve system_mem_pct % of system memory resources for this script
-    reserve_system_memory(reserve)
 
     # Check available memory    
     mem_info()
-    print('RESERVED MB:', reserve)
-    print('CONSUMED MB:', consume)
+    
+    # Calculate the amount of RAM in MB to reserve and consume from percentage
+    reserve_mbytes, consume_mbytes = calculate_memory(reserve_pct, consume_pct)
+    print('RESERVED MB:', reserve_mbytes)
+    print('CONSUMED MB:', consume_mbytes)
 
-    # Simulate memory usage, allocating process_mem_pct % of reserved memory
-    data = fill_memory(consume)
+    # Reserve system memory
+    reserve_system_memory(reserve_mbytes)
+
+    # Simulate memory usage, allocating from reserved memory
+    data = fill_memory(consume_mbytes)
 
     # Check memory has taken from right places
     mem_check()
