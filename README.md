@@ -1,5 +1,6 @@
 # Memory Stress Test
 
+### Description
 A Python script to reserve and stress system memory resources from Linux machines.
 
 This script reserves system resources using Linux Kernel cgroups https://en.wikipedia.org/wiki/Cgroups, 
@@ -35,13 +36,13 @@ pip install -r requirements.txt
 python memory-stress-test -m [% of the reserved memory to be consumed ]
 
 ### Useful References
-### CGROUPS Python Module
+CGROUPS Python Module
 https://github.com/francisbouvier/cgroups
 
-### CGROUPS-UTILS Python Module and Library
+CGROUPS-UTILS Python Module and Library
 https://github.com/peo3/cgroup-utils
 
-### PSUTILS
+PSUTILS
 https://psutil.readthedocs.io/en/latest/
 
 ### MEMORY-PROFILER
