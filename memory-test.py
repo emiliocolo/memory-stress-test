@@ -2,7 +2,8 @@
 # memory-test
 # created date: 23/11/2019
 # name: Emilio Coronado
-# description: a basic script that reserves a % of memory from the system and then allocates a % of that reserved memory to simulate large memory usage and constraints
+# Basic script that reserves a % of memory from the system and then allocates 
+# a % of reserved memory to simulate large memory usage and constraints
 #
 import os
 import time
