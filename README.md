@@ -30,6 +30,8 @@ N.B.: This will only give the user permissions to manage cgroups in his or her o
 N.B.: You only need to execute this script once.
 
 ### Installation
+git clone this repository
+
 pip install -r requirements.txt
 
 ### Usage
