@@ -17,8 +17,7 @@ def calculate_memory(reserve_pct, consume_pct):
     # From % to MB
     total_memory = psutil.virtual_memory().total / 1024 / 1024
     reserve_qty = (total_memory * reserve_pct) / 100
-    consume_qty = (reserve_qty * consume_pct) / 100
-   
+    consume_qty = (reserve_qty * consume_pct) / 10
     return reserve_qty, consume_qty
 
 def reserve_system_memory(memory_qty):
@@ -32,7 +31,6 @@ def fill_memory(memory_qty):
     # consume: MB of reserved memory
     dummy_buffer = []
     dummy_buffer = ['A' * 1024 * 1024 for _ in range(0, memory_qty)]
-
     return dummy_buffer
 
 def mem_info():
