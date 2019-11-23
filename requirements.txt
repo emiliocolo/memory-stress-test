@@ -4,7 +4,7 @@ backports.functools-lru-cache==1.6.1
 cgroup-utils==0.7
 cgroups==0.1.0
 configparser==4.0.2
-cryptography==2.1.4
+cryptography==2.3
 enum34==1.1.6
 futures==3.3.0
 idna==2.6
