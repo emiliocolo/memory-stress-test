@@ -3,12 +3,15 @@
 ## Description
 A Python script to reserve and stress system memory resources from Linux machines.
 
-This script reserves system resources using Linux Kernel cgroups https://en.wikipedia.org/wiki/Cgroups, 
-http://man7.org/linux/man-pages/man7/cgroups.7.html through cgroups convenience python module that simplifies 
-the operations of having to walk through and manipulate the file system directly.
+This script reserves system resources using Linux Kernel cgroups: 
+https://en.wikipedia.org/wiki/Cgroups, http://man7.org/linux/man-pages/man7/cgroups.7.html 
 
-It also uses the PSUTILS module to get system memory stats and a MEMORY_PROFILER module to check the simulated memory
-allocated by a dummy buffer.
+There exist a convenience python module called cgroups to simplify the operations of 
+having to walk through and manipulate the /proc directory files directly.
+
+On memory stats and profiling, psutils and memory_profiler module are main helpers here.
+
+Last but not least, memory allocation is simulated through a dummy buffer implemented as a python list.
 
 ## Requirements
 Linux and basic Python installation, included pip for install required modules, 
@@ -25,7 +28,7 @@ In order to create those cgroups sub-directories you use the user_cgroups comman
 ```
 sudo user_cgroups USER
 ```
-N.B.: This will only give the user permissions to manage cgroups in his or her own sub-directories and process. It wiil not give the user permissions on other cgroups, process, or system commands.
+N.B.: This will only give the user permissions to manage cgroups in his or her own sub-directories and process. It will not give the user permissions on other cgroups, process, or system commands.
 
 N.B.: You only need to execute this script once.
 
