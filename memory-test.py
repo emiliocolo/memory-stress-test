@@ -36,9 +36,7 @@ def fill_memory(memory_qty):
     return dummy_buffer
 
 def mem_info():
-    pprint_ntuple(psutil.virtual_memory())
-
-def pprint_ntuple(nt):
+    nt = psutil.virtual_memory()
     # Pretty print the tuple returned in psutil.virtual_memory()
     for name in nt._fields:
         value = getattr(nt, name)
