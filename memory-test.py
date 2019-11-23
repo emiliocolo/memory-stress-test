@@ -19,21 +19,21 @@ MEGABYTE = 1024 * 1024
 def calculate_memory(reserve_pct, consume_pct):
     # From % to MB
     total_memory = psutil.virtual_memory().total / MEGABYTE
-    reserve_qty = (total_memory * reserve_pct) / 100
-    consume_qty = (reserve_qty * consume_pct) / 100
-    return reserve_qty, consume_qty
+    reserve_mbytes = (total_memory * reserve_pct) / 100
+    consume_mbytes = (reserve_mbytes * consume_pct) / 100
+    return reserve_mbytes, consume_mbytes
 
-def reserve_system_memory(memory_qty):
+def reserve_system_memory(reserve_mbytes):
     # http://man7.org/linux/man-pages/man7/cgroups.7.html
     # system memory to be reserved to the script
     cg = Cgroup('my-container')
-    cg.set_memory_limit(memory_qty)
+    cg.set_memory_limit(reserve_mbytes)
     cg.add(os.getpid()) 
 
-def fill_memory(memory_qty):
+def fill_memory(data_mbytes):
     # consume: MB of reserved memory
     dummy_buffer = []
-    dummy_buffer = ['A' * MEGABYTE for _ in range(0, int(memory_qty))]
+    dummy_buffer = ['A' * MEGABYTE for _ in range(0, int(data_mbytes))]
     return dummy_buffer
 
 def mem_info():
@@ -63,8 +63,8 @@ def main():
     
     # Calculate the amount of RAM in MB to reserve and consume from percentage
     reserve_mbytes, consume_mbytes = calculate_memory(reserve_pct, consume_pct)
-    print('RESERVED MB:', reserve_mbytes)
-    print('CONSUMED MB:', consume_mbytes)
+    print('RESERVED MB:', int(reserve_mbytes))
+    print('CONSUMED MB:', int(consume_mbytes))
 
     # Reserve system memory
     reserve_system_memory(reserve_mbytes)
