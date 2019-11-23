@@ -22,26 +22,26 @@ Root and non-root usage
 To use cgroups the current user has to have root privileges OR existing cgroups sub-directories.
 
 In order to create those cgroups sub-directories you use the user_cgroups command as root.
-'''
+```
 sudo user_cgroups USER
-'''
+```
 N.B.: This will only give the user permissions to manage cgroups in his or her own sub-directories and process. It wiil not give the user permissions on other cgroups, process, or system commands.
 
 N.B.: You only need to execute this script once.
 
 ## Installation
-'''
+```
 git clone this repository
 pip install -r requirements.txt
-'''
+```
 
 ### Usage
-'''
+```
 python memory-stress-test -m [% of the reserved memory to be consumed ]
-'''
+```
 
 ### Useful references
-'''
+```
 CGROUPS Python Module
 https://github.com/francisbouvier/cgroups
 
@@ -53,4 +53,4 @@ https://psutil.readthedocs.io/en/latest/
 
 MEMORY-PROFILER
 https://pypi.org/project/memory-profiler/
-'''
+```
