@@ -20,6 +20,7 @@ Linux and basic Python installation, included pip for install required modules,
 it works in local and virtual environments, tested over Python 2.7 and Python 3.6 branches.
 
 ## Installation
+As usual
 ```
 git clone this repository
 pip install -r requirements.txt
