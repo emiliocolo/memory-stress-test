@@ -19,8 +19,13 @@ Last but not least, memory allocation is simulated through a dummy buffer implem
 Linux and basic Python installation, included pip for install required modules, 
 it works in local and virtual environments, tested over Python 2.7 and Python 3.6 branches.
 
-## Requirements and notes on cgroups ( from cgroups package README.md ):
-**Root and non-root usage**
+## Installation
+```
+git clone this repository
+pip install -r requirements.txt
+```
+
+**Root and non-root usage**  ( from cgroups package README.md ):
 
 To use cgroups the current user has to have root privileges OR existing cgroups sub-directories.
 
@@ -31,12 +36,6 @@ sudo user_cgroups USER
 N.B.: This will only give the user permissions to manage cgroups in his or her own sub-directories and process. It will not give the user permissions on other cgroups, process, or system commands.
 
 N.B.: You only need to execute this script once.
-
-## Installation
-```
-git clone this repository
-pip install -r requirements.txt
-```
 
 ### Usage
 ```
