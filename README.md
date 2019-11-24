@@ -11,7 +11,7 @@ http://man7.org/linux/man-pages/man7/cgroups.7.html
 There exist a convenience python module called cgroups to simplify the operations of 
 having to walk through and manipulate the /proc directory files directly.
 
-On memory stats and profiling, psutils and memory_profilers python packages/modules are main helpers here.
+On memory stats and profiling the psutils and memory_profilers python packages are main helpers here.
 
 Last but not least, memory allocation is simulated through a dummy buffer implemented as a python list.
 
