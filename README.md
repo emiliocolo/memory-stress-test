@@ -1,7 +1,7 @@
 # MEMORY STRESS TEST
 
 ## Description
-A Python script to reserve and stress system memory resources from Linux machines.
+A Python script to reserve, simulate and stress system memory resources on Linux machines.
 
 This script reserves system resources using Linux Kernel cgroups: 
 https://en.wikipedia.org/wiki/Cgroups, http://man7.org/linux/man-pages/man7/cgroups.7.html 
