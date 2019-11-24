@@ -18,8 +18,6 @@ Linux and basic Python installation, included pip for install required modules,
 it works in local and virtual environments, tested over Python 2.7 and Python 3.6 branches.
 
 ## Requirements and notes on cgroups ( from cgroups package README.md ):
-https://github.com/francisbouvier/cgroups/blob/master/README.md
-
 Root and non-root usage
 
 To use cgroups the current user has to have root privileges OR existing cgroups sub-directories.
