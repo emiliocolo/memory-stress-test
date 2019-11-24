@@ -58,5 +58,5 @@ https://pypi.org/project/memory-profiler/
 
 ### To do's
 - Research Python types, objects and runtime sizes to a more accurate simulation on the amount of memory simulated.
-- PSUtils looks like the go to package for OS resources statistics. Get better confidences on where measurements come from, and accuracies are.
-- cgroups API, correlation with the Linux OS memory management sub system for better fine tuning and granularity of the simulation.
+- PSUtils looks like the go to Python module for OS resources statistics. Do more test and understant where the measurements come from, and the measures align with other tools like top or htop.
+- More readings on cgroups API to understand the correlation with the Linux OS memory management sub system for better fine tuning and granularity of the simulation.
