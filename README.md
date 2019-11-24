@@ -4,8 +4,10 @@
 A Python script to reserve, simulate and stress system memory resources on Linux machines.
 
 This script reserves system resources using Linux Kernel cgroups: 
-https://en.wikipedia.org/wiki/Cgroups, http://man7.org/linux/man-pages/man7/cgroups.7.html 
-
+```
+https://en.wikipedia.org/wiki/Cgroups
+http://man7.org/linux/man-pages/man7/cgroups.7.html 
+```
 There exist a convenience python module called cgroups to simplify the operations of 
 having to walk through and manipulate the /proc directory files directly.
 
@@ -18,7 +20,7 @@ Linux and basic Python installation, included pip for install required modules,
 it works in local and virtual environments, tested over Python 2.7 and Python 3.6 branches.
 
 ## Requirements and notes on cgroups ( from cgroups package README.md ):
-Root and non-root usage
+**Root and non-root usage**
 
 To use cgroups the current user has to have root privileges OR existing cgroups sub-directories.
 
