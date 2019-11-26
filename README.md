@@ -3,8 +3,8 @@
 ## Description
 A Python script to reserve, simulate and stress system memory resources on Linux machines using Linux Kernel cgroups: 
 ```
-<https://en.wikipedia.org/wiki/Cgroups>
-<http://man7.org/linux/man-pages/man7/cgroups.7.html> 
+https://en.wikipedia.org/wiki/Cgroups
+http://man7.org/linux/man-pages/man7/cgroups.7.html
 ```
 It uses a convenience python module called cgroups to simplify the operations of 
 having to walk through and manipulate the /proc directory files directly.
@@ -45,16 +45,16 @@ python memory-stress-test -m [% of the reserved memory to be consumed ]
 ### Useful references
 ```
 CGROUPS Python Module
-<https://github.com/francisbouvier/cgroups>
+https://github.com/francisbouvier/cgroups>
 
 CGROUPS-UTILS Python Module and Library
-<https://github.com/peo3/cgroup-utils>
+https://github.com/peo3/cgroup-utils
 
 PSUTILS
-<https://psutil.readthedocs.io/en/latest/>
+https://psutil.readthedocs.io/en/latest/
 
 MEMORY-PROFILER
-<https://pypi.org/project/memory-profiler/>
+https://pypi.org/project/memory-profiler/
 ```
 
 ### To do's
