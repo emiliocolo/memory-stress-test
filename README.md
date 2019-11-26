@@ -1,22 +1,20 @@
 # MEMORY STRESS TEST
 
 ## Description
-A Python script to reserve, simulate and stress system memory resources on Linux machines.
-
-This script reserves system resources using Linux Kernel cgroups: 
+A Python script to reserve, simulate and stress system memory resources on Linux machines using Linux Kernel cgroups: 
 ```
 https://en.wikipedia.org/wiki/Cgroups
 http://man7.org/linux/man-pages/man7/cgroups.7.html 
 ```
-Exist a convenience python module called cgroups to simplify the operations of 
+It uses a convenience python module called cgroups to simplify the operations of 
 having to walk through and manipulate the /proc directory files directly.
 
-Printing memory stats and profiling with psutils and memory_profilers python packages.
+It Prints memory stats and profiling with psutils and memory_profilers python packages.
 
-and last but not least, memory allocation is simulated through a dummy buffer implemented as a python list.
+Last but not least simulates memory allocation through a dummy buffer implemented as a python list.
 
 ## Requirements
-Linux and basic Python installation, with included pip for install required modules.
+Linux and basic Python installation with included pip for install required modules.
 
 it works in local and virtual environments, tested over Python 2.7 and Python 3.6 branches.
 
