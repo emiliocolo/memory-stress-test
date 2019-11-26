@@ -8,19 +8,20 @@ This script reserves system resources using Linux Kernel cgroups:
 https://en.wikipedia.org/wiki/Cgroups
 http://man7.org/linux/man-pages/man7/cgroups.7.html 
 ```
-There exist a convenience python module called cgroups to simplify the operations of 
+Exist a convenience python module called cgroups to simplify the operations of 
 having to walk through and manipulate the /proc directory files directly.
 
-On memory stats and profiling the psutils and memory_profilers python packages are main helpers here.
+Printing memory stats and profiling with psutils and memory_profilers python packages.
 
-Last but not least, memory allocation is simulated through a dummy buffer implemented as a python list.
+and last but not least, memory allocation is simulated through a dummy buffer implemented as a python list.
 
 ## Requirements
-Linux and basic Python installation, included pip for install required modules, 
+Linux and basic Python installation, with included pip for install required modules.
+
 it works in local and virtual environments, tested over Python 2.7 and Python 3.6 branches.
 
 ## Installation
-As usual
+Steps as usual:
 ```
 git clone this repository
 pip install -r requirements.txt
@@ -58,7 +59,9 @@ MEMORY-PROFILER
 https://pypi.org/project/memory-profiler/
 ```
 
-### To do's
+### To-Do's
 - Research Python types, objects and runtime sizes to a more accurate simulation on the amount of memory simulated.
+
 - PSUtils looks like the go to Python module for OS resources statistics. Do more test and understant where the measurements come from, and the measures align with other tools like top or htop.
+
 - More readings on cgroups API to understand the correlation with the Linux OS memory management sub system for better fine tuning and granularity of the simulation.
