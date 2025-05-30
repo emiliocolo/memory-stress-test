@@ -7,7 +7,6 @@
 #
 import os
 import time
-import sys
 import psutil
 import argparse
 from cgroups import Cgroup
